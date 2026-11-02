@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rayan – Portfolio BTS SIO SISR</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=Lato:wght@400;700;900&display=swap">
+<style>
+:root{--bg:#EEF1F6;--surface:#fff;--ink:#101A2E;--muted:#55607A;--line:#D3D9E4;--accent:#C62B20;--accent-ink:#fff;--todo:#9A6A00;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0E1424;--surface:#161E33;--ink:#EDF0F7;--muted:#9AA5BF;--line:#2A3452;--accent:#EF5A4D;--accent-ink:#0E1424;--todo:#E3B341}}
+:root[data-theme="dark"]{--bg:#0E1424;--surface:#161E33;--ink:#EDF0F7;--muted:#9AA5BF;--line:#2A3452;--accent:#EF5A4D;--accent-ink:#0E1424;--todo:#E3B341}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 Archivo,system-ui,-apple-system,"Segoe UI",sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--surface);z-index:10}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--surface);border-bottom:2px solid var(--ink);display:flex;flex-wrap:wrap;align-items:center;gap:12px 24px;padding:12px clamp(16px,4vw,48px)}
+.logo{font-weight:800;font-size:1.5rem;letter-spacing:-.02em;color:var(--ink);text-decoration:none}
+.logo b{color:var(--accent)}
+.search{flex:1 1 220px;max-width:420px}
+.search input{width:100%;padding:10px 14px;font:inherit;font-size:.95rem;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:6px}
+nav{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap}
+nav button{font:600 .95rem Archivo,system-ui,sans-serif;color:var(--muted);background:none;border:0;border-bottom:3px solid transparent;padding:8px 12px;cursor:pointer}
+nav button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--accent)}
+button:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+main{max-width:980px;margin:0 auto;padding:clamp(24px,5vw,56px) clamp(16px,4vw,48px) 80px}
+section[hidden]{display:none}
+h1{font-weight:800;font-size:clamp(2.4rem,7vw,4.6rem);line-height:1;letter-spacing:-.035em;margin:0 0 20px;max-width:14ch}
+h2{font-weight:800;font-size:1.6rem;letter-spacing:-.02em;margin:48px 0 16px}
+.lead{font-size:1.2rem;max-width:60ch;color:var(--muted);margin:0}
+.block{background:var(--surface);border:1.5px solid var(--line);border-left:6px solid var(--ink);padding:18px 22px;margin:0 0 14px}
+.block h3{margin:0 0 6px;font-size:1.1rem}
+.block p{margin:0;max-width:70ch}
+.block.hl{border-left-color:var(--accent)}
+.tl{list-style:none;margin:0;padding:0 0 0 22px;border-left:3px solid var(--ink)}
+.tl li{position:relative;margin:0 0 22px;padding-left:12px}
+.tl li::before{content:"";position:absolute;left:-31px;top:8px;width:13px;height:13px;background:var(--accent);border:3px solid var(--bg)}
+.tl strong{display:block;font-weight:800}
+.todo{border:2px dashed var(--todo);color:var(--todo);padding:12px 16px;margin:0 0 14px;font-size:.95rem;font-weight:600}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.grid .block{margin:0}
+.hint{color:var(--muted);font-size:.9rem}
+#res .none{color:var(--muted)}
+mark{background:var(--accent);color:var(--accent-ink);padding:0 2px}
+body[data-skin="orange"]{--bg:#fff;--surface:#fff;--ink:#000;--muted:#595959;--line:#CCCCCC;--accent:#FF7900;--accent-ink:#000;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif}
+body[data-skin="orange"]::before,body[data-skin="orange"] header{background:#000}
+body[data-skin="orange"] header{border-bottom:4px solid #FF7900}
+body[data-skin="orange"] .logo,body[data-skin="orange"] nav button[aria-selected="true"]{color:#fff}
+body[data-skin="orange"] nav button{color:#BBB}
+body[data-skin="orange"] .logo b{color:#FF7900}
+body[data-skin="orange"] h1::before{content:"";display:block;width:56px;height:56px;background:#FF7900;margin-bottom:18px}
+body[data-skin="orange"] .block{border-left-color:#000}
+body[data-skin="orange"] .block.hl{border-left-color:#FF7900}
+body[data-skin="school"]{--bg:#fff;--surface:#fff;--ink:#333333;--muted:#5C5C5C;--line:#E0E0E0;--accent:#28C940;--accent-ink:#333333;font-family:Lato,system-ui,sans-serif}
+body[data-skin="school"] nav button{font-family:Lato,system-ui,sans-serif}
+body[data-skin="school"]::before,body[data-skin="school"] header{background:#fff}
+body[data-skin="school"] header{border-bottom:4px solid #28C940}
+body[data-skin="school"] h1::before{content:"";display:block;width:72px;height:8px;background:#28C940;margin-bottom:18px}
+body[data-skin="school"] .block{border-left-color:#333333}body[data-skin="school"] .block.hl{border-left-color:#28C940}
+@keyframes fromright{from{opacity:0;transform:translateX(70px)}to{opacity:1;transform:none}}
+@keyframes fromleft{from{opacity:0;transform:translateX(-70px)}to{opacity:1;transform:none}}
+section.fromright{animation:fromright .35s ease-out}
+section.fromleft{animation:fromleft .35s ease-out}
+main{overflow-x:clip}
+@media (prefers-reduced-motion:reduce){section.fromright,section.fromleft{animation:none}}
+footer{border-top:2px solid var(--ink);padding:20px clamp(16px,4vw,48px);color:var(--muted);font-size:.9rem}
+</style>
+</head>
+<body>
+<header>
+  <a class="logo" href="#moi">Rayan<b>.</b></a>
+  <div class="search"><input id="q" type="search" placeholder="Rechercher dans le portfolio…" aria-label="Rechercher dans le portfolio" autocomplete="off"></div>
+  <nav role="tablist" aria-label="Sections">
+    <button role="tab" data-t="moi">Moi</button>
+    <button role="tab" data-t="formation">Ma formation</button>
+    <button role="tab" data-t="alternance">Mon alternance</button>
+    <button role="tab" data-t="realisations">Réalisations</button>
+  </nav>
+</header>
+<main>
+
+<section id="moi" data-tab>
+  <h1>Rayan, 20 ans, futur technicien réseaux.</h1>
+  <p class="lead">Étudiant en BTS SIO option SISR, j’habite à Fosses. Je suis passé du développement à l’infrastructure, et je vise la cybersécurité.</p>
+
+  <h2>Mon parcours</h2>
+  <ul class="tl">
+    <li class="blk"><strong>6<sup>e</sup> : Scratch</strong>Je crée mes premiers jeux vidéo avec des blocs de code.</li>
+    <li class="blk"><strong>3<sup>e</sup> : premiers sites web</strong>Je code mes premières pages en HTML et CSS.</li>
+    <li class="blk"><strong>Terminale : Python</strong>Je programme de petits jeux comme le Juste Prix et le Pendu.</li>
+    <li class="blk"><strong>Bac STMG</strong>Un bac technologique, qui m’ouvre la porte du BTS SIO.</li>
+    <li class="blk"><strong>1<sup>re</sup> année de BTS SIO SLAM</strong>Je pars sur le développement, mon rêve d’enfant. Je comprends que ça ne me plaît pas autant que prévu.</li>
+    <li class="blk"><strong>Réorientation en BTS SIO SISR</strong>Je choisis les systèmes et réseaux, et cette fois j’y trouve ma voie.</li>
+  </ul>
+
+  <h2>Ce qui m’a mené ici</h2>
+  <div class="block hl blk"><h3>Une passion d’enfance</h3><p>Depuis petit, je veux faire de l’informatique : tout a commencé par l’envie de créer des jeux vidéo. Ce goût du code m’aide aujourd’hui à automatiser des tâches et à écrire des scripts pour administrer des systèmes.</p></div>
+
+  <h2>En dehors de l’informatique</h2>
+  <div class="grid">
+    <div class="block blk"><h3>Boxe anglaise</h3><p>Je suis coach de boxe anglaise à Goussainville. J’y apprends la pédagogie, la rigueur et la gestion d’un groupe.</p></div>
+    <div class="block blk"><h3>Sports de combat</h3><p>Boxe, lutte et MMA : la discipline et le sang-froid comptent autant que la technique.</p></div>
+    <div class="block blk"><h3>Football</h3><p>Un sport collectif, qui me rappelle que le travail d’équipe fait gagner.</p></div>
+  </div>
+
+  <h2>Mon projet</h2>
+  <div class="block hl blk"><h3>Licence pro Systèmes et Réseaux, puis cybersécurité</h3><p>Après le BTS, je veux poursuivre en licence professionnelle systèmes et réseaux. Mon objectif final : travailler dans la cybersécurité.</p></div>
+</section>
+
+<section id="formation" data-tab hidden>
+  <h1>Ma formation</h1>
+  <p class="lead">BTS Services Informatiques aux Organisations, option SISR : Solutions d’Infrastructure, Systèmes et Réseaux.</p>
+  <h2>Mon école</h2>
+  <div class="block hl blk"><h3>Schola Nova, Paris 19<sup>e</sup></h3><p>École privée reconnue par l’État, située quai de la Seine. Elle propose des BTS en alternance : la formation est gratuite pour l’étudiant, et l’école accompagne la recherche d’entreprise (CV, entretiens) puis le suivi.</p></div>
+  <div class="block blk"><h3>Mon rythme</h3><p>Une semaine en formation, une semaine en entreprise, sur 2 ans.</p></div>
+  <div class="block blk"><h3>Une école sociale et solidaire</h3><p>Schola Nova est reconnue Entreprise Solidaire d’Utilité Sociale (ESUS) et possède la certification qualité Qualiopi.</p></div>
+  <h2>Ce que j’apprends</h2>
+  <div class="grid">
+    <div class="block blk"><h3>Systèmes et réseaux</h3><p>Installation et configuration de serveurs, de services réseau et de postes de travail.</p></div>
+    <div class="block blk"><h3>Cybersécurité</h3><p>Sécurisation des services informatiques et protection des données.</p></div>
+    <div class="block blk"><h3>Support et exploitation</h3><p>Assistance aux utilisateurs, supervision et maintien en condition opérationnelle.</p></div>
+  </div>
+  <h2>Matières</h2>
+  <div class="grid">
+    <div class="block blk"><h3>Enseignement général</h3><p>CEJM (culture économique, juridique et managériale), CGE (culture générale et expression), mathématiques et anglais.</p></div>
+    <div class="block blk"><h3>Enseignement professionnel</h3><p>Administration des systèmes et des réseaux, avec des outils vus en pratique (voir ci-dessous).</p></div>
+  </div>
+  <h2>Outils maîtrisés</h2>
+  <div class="grid">
+    <div class="block blk"><h3>Cisco Packet Tracer</h3><p>Simulation et configuration de réseaux (switchs, routeurs, VLAN).</p></div>
+    <div class="block blk"><h3>VMware et Proxmox</h3><p>Virtualisation de serveurs et de postes de travail.</p></div>
+    <div class="block blk"><h3>Windows Server</h3><p>Administration d’un serveur et de ses services.</p></div>
+    <div class="block blk"><h3>Linux</h3><p>Utilisation et administration de systèmes Linux.</p></div>
+  </div>
+  <h2>Certification</h2>
+  <div class="block hl blk"><h3>CCNA (Cisco)</h3><p>Je prépare le CCNA, la certification de référence en réseaux, pour consolider mes bases avant la licence pro.</p></div>
+</section>
+
+<section id="alternance" data-tab hidden>
+  <h1>Mon alternance</h1>
+  <p class="lead">Là où j’applique la formation sur des vrais besoins.</p>
+  <h2>Mon entreprise</h2>
+  <div class="block hl blk"><h3>Orange, site Orange Gardens</h3><p>Je fais mon alternance chez Orange, un opérateur de télécommunications. J’interviens sur le site Orange Gardens, où je m’occupe de l’ensemble du parc informatique.</p></div>
+  <div class="grid">
+    <div class="block blk"><h3>Un grand site</h3><p>Plus de 7 000 salariés travaillent sur le site Orange Gardens.</p></div>
+    <div class="block blk"><h3>Mon tuteur</h3><p>Alain Hajd Messaoud, qui encadre mon travail en entreprise.</p></div>
+  </div>
+  <h2>Mon poste</h2>
+  <div class="block hl blk"><h3>Technicien support de proximité (TSP)</h3><p>Je suis le point de contact des salariés du site pour tout ce qui touche à leur matériel informatique.</p></div>
+  <h2>Mes missions</h2>
+  <div class="grid">
+    <div class="block blk"><h3>Postes de travail</h3><p>Gestion des PC et des positions de travail : installation, dépannage, remplacement.</p></div>
+    <div class="block blk"><h3>Mobiles</h3><p>Gestion des téléphones mobiles des salariés.</p></div>
+    <div class="block blk"><h3>Réseau des positions</h3><p>Vérification du réseau de chaque position et brassage réseau selon les besoins.</p></div>
+    <div class="block blk"><h3>Support aux salariés</h3><p>Je traite les tickets des salariés et je résous les incidents, à distance ou sur place.</p></div>
+  </div>
+</section>
+
+<section id="realisations" data-tab hidden>
+  <h1>Mes réalisations</h1>
+  <p class="lead">Les deux situations professionnelles présentées à l’oral.</p>
+  <div class="grid">
+    <div class="block hl blk"><h3>Réalisation 1</h3><p class="hint">À compléter : titre, contexte, besoin, solution, outils, compétences du référentiel, preuves (captures, schémas).</p></div>
+    <div class="block hl blk"><h3>Réalisation 2</h3><p class="hint">À compléter : titre, contexte, besoin, solution, outils, compétences du référentiel, preuves (captures, schémas).</p></div>
+  </div>
+</section>
+
+<section id="res" hidden>
+  <h1>Résultats</h1>
+  <div id="resList"></div>
+</section>
+
+</main>
+<footer>Portfolio de Rayan, BTS SIO option SISR.</footer>
+
+<script>
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('[data-tab]'));
+  var btns=[].slice.call(document.querySelectorAll('nav button'));
+  var res=document.getElementById('res'),list=document.getElementById('resList'),q=document.getElementById('q');
+  var cur='moi';
+  function show(id,keepHash){
+    if(!document.getElementById(id)||id==='res')id='moi';
+    var order=['moi','formation','alternance','realisations'];
+    var dir=order.indexOf(id)>=order.indexOf(cur)?'fromright':'fromleft';
+    var go=!keepHash&&id!==cur;
+    cur=id;
+    document.body.setAttribute('data-skin',{formation:'school',alternance:'orange'}[id]||'');
+    tabs.forEach(function(s){s.hidden=s.id!==id;s.classList.remove('fromleft','fromright')});
+    if(go){var el=document.getElementById(id);void el.offsetWidth;el.classList.add(dir)}
+    res.hidden=true;
+    btns.forEach(function(b){b.setAttribute('aria-selected',String(b.dataset.t===id))});
+    if(!keepHash){try{history.replaceState(null,'','#'+id)}catch(e){}}
+    window.scrollTo(0,0);
+  }
+  btns.forEach(function(b){b.addEventListener('click',function(){q.value='';show(b.dataset.t)})});
+  function esc(s){return s.replace(/[&<>]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[c]})}
+  q.addEventListener('input',function(){
+    var v=q.value.trim().toLowerCase();
+    if(!v){show(cur,true);return}
+    tabs.forEach(function(s){s.hidden=true});
+    res.hidden=false;
+    document.body.setAttribute('data-skin','');
+    var hits=[];
+    document.querySelectorAll('[data-tab] .blk').forEach(function(el){
+      if(el.textContent.toLowerCase().indexOf(v)>-1){
+        var sec=el.closest('[data-tab]');
+        var name=document.querySelector('nav [data-t="'+sec.id+'"]').textContent;
+        hits.push('<div class="block"><h3>'+esc(name)+'</h3><p>'+esc(el.textContent.replace(/\s+/g,' ').trim())+'</p></div>');
+      }
+    });
+    list.innerHTML=hits.length?hits.join(''):'<p class="none">Aucun résultat pour « '+esc(q.value)+' ». Essaie un autre mot.</p>';
+  });
+  show((location.hash||'#moi').slice(1),true);
+})();
+</script>
+</body>
+</html>
